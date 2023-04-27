@@ -1,0 +1,131 @@
+
+$blue: #0061F7;
+$orange: #FB661E;
+
+.center{
+    width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: white;
+}
+
+
+@mixin default-page-size{
+    min-height: 100vh;
+    background-image: url('../../assets/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wrapper-register{
+    @include default-page-size();
+
+    .form-check{
+        margin-left: 20px;
+    }
+
+}
+
+#wrapper-login{
+    @include default-page-size();
+    
+}
+
+#wrapper-faculty-dashboard{
+    height: 100vh;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    .sidebar{
+        background-color: $blue;
+        padding: 10px;
+
+        .img-box{
+            border-bottom: 2px solid #e2e2e2;
+            padding: 10px 0;
+            img{
+                height: 130px;
+                width: 130px;
+                background-color: white;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                border-radius: 50%;
+            }
+        }
+
+        ul{
+
+            a{
+                line-height: 50px;
+                font-size: 20px;
+                
+                li{
+                    color: white;
+                    margin: 5px 0px;
+                    &:hover{
+                        transition: 1s;
+                        color: rgb(68, 68, 68);
+                        background-color: #f2f2f2;
+                        border-radius: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .content{
+        height: 100vh;
+        position: relative;
+        height: 100vh;
+        overflow-y: hidden;
+
+        nav{
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            background-color: $orange;
+            height: 100px;
+        }
+
+        .content-section{
+            padding: 120px 20px 0 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        #home{
+            background-image: url('../../assets/images/landing-bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            .welcome-box{
+                display: grid;
+
+                @mixin welcomeText{
+                    font-size: 50px;
+                    color: white;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    text-align: center;
+                    text-shadow: 0 5px 10px black;
+                }
+                .text1 , .text2, .text3, .text4{
+                    @include welcomeText();
+                }
+            }
+        }
+
+        #setting{
+            #profile-trigger{
+
+            }
+        }
+    }
+
+}

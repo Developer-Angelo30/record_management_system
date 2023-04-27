@@ -1,0 +1,78 @@
+.center {
+  width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+#wrapper-register {
+  min-height: 100vh;
+  background-image: url("../../assets/images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#wrapper-register .form-check {
+  margin-left: 20px;
+}
+
+#wrapper-login {
+  min-height: 100vh;
+  background-image: url("../../assets/images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#wrapper-faculty-dashboard {
+  height: 100vh;
+  background-color: #f2f2f2;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+#wrapper-faculty-dashboard .sidebar {
+  background-color: #0061F7;
+  padding: 10px;
+}
+#wrapper-faculty-dashboard .sidebar .img-box {
+  border-bottom: 2px solid #e2e2e2;
+  padding: 10px 0;
+}
+#wrapper-faculty-dashboard .sidebar .img-box img {
+  height: 130px;
+  width: 130px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+#wrapper-faculty-dashboard .sidebar ul a {
+  line-height: 50px;
+  font-size: 20px;
+}
+#wrapper-faculty-dashboard .sidebar ul a li {
+  color: white;
+  margin: 5px 0px;
+}
+#wrapper-faculty-dashboard .sidebar ul a li:hover {
+  transition: 1s;
+  color: rgb(68, 68, 68);
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+#wrapper-faculty-dashboard .content {
+  height: 100vh;
+  position: relative;
+}
+#wrapper-faculty-dashboard .content nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #FB661E;
+  height: 100px;
+}
+#wrapper-faculty-dashboard .content .content-section {
+  padding: 120px 20px 0 20px;
+  height: 100vh;
+  overflow-y: auto;
+}/*# sourceMappingURL=all.css.map */

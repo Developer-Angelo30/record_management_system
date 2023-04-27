@@ -120,4 +120,82 @@ $(document).ready( ()=>{
         })
     }
     resetError()
+
+    const updateEmail = () =>{
+        $(document).on('submit', '#updateEmailForm', function(event){
+            event.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                method: "POST",
+                url: "../../apps/api/update_email.php",
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                success: function (response) {
+                    if(response.status == true){
+                        location.href = response.message;
+                    }
+                    else{
+                        Swal.fire(
+                            'Something went wrong!',
+                            response.message,
+                            'error'
+                        )
+                    }
+                }
+            });
+
+        })
+    }
+    updateEmail()
+
+    const updatePassword  = () =>{
+        $(document).on('submit', '#updatePasswordForm' , function(event){
+            event.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                method: "POST",
+                url: "../../apps/api/update_password.php",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                dataType: "JSON",
+                success: function (response) {
+                    if(response.status == true){
+                        location.href = response.message;
+                    }
+                    else{
+                        Swal.fire(
+                            'Something went wrong!',
+                            response.message,
+                            'error'
+                        )
+                    }
+                }
+            });
+        })
+    }
+    updatePassword();
+
+    const updatePersonalInfo = () =>{
+        $(document).on('submit', '#updatePersonalForm' , function(){
+            event.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                method: "POST",
+                url: "../../apps/api/update_personal_info.php",
+                data: formData,
+                processData: false,
+                contentType: false,
+                // dataType: "JSON",
+                success: function (response) {
+                    alert(response)
+                }
+            });
+        })
+    }
+    updatePersonalInfo()
+
 } )

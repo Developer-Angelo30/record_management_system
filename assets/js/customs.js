@@ -23,6 +23,10 @@ $(document).ready( ()=>{
                    }
                    else{
                         switch(response.error){
+                            case 'username':{
+                                $('.error-username').text(response.message)
+                                break;
+                            }
                             case 'email':{
                                 $('.error-email').text(response.message)
                                 break;
@@ -88,6 +92,10 @@ $(document).ready( ()=>{
                     }
                     else{
                         switch(response.error){
+                            case 'username': {
+                                $('.error-username').text(response.message)
+                                break;
+                            }
                             case 'email': {
                                 $('.error-email').text(response.message)
                                 break;
@@ -189,13 +197,47 @@ $(document).ready( ()=>{
                 data: formData,
                 processData: false,
                 contentType: false,
-                // dataType: "JSON",
+                dataType: "JSON",
                 success: function (response) {
-                    alert(response)
+                    if(response.status == true){
+                        location.reload();
+                    }
+                    else{
+                        Swal.fire(
+                            'Something went wrong!',
+                            response.message,
+                            'error'
+                        )
+                    }
                 }
             });
         })
     }
     updatePersonalInfo()
+
+    const announcementDisplay = () =>{
+        
+        $.ajax({
+            url: "../../apps/api/announcement.php",
+            method: "POST",
+            dataType: "JSON",
+            success: (response) =>{
+                $('#fetch-announcement').html('')
+                for(i in response){
+                    $('#fetch-announcement').append('\
+                    <div class="bg-bg=light shadow mt-3 bg-light p-5 " >\
+                        <div class="navbar">\
+                            <h1>'+response[i].title+'</h1>\
+                            <small>'+response[i].date+'</small>\
+                        </div><hr>\
+                        <p>'+response[i].message+'</p>\
+                    </div>\
+                ')
+                }
+            }
+            
+        })
+    }
+    announcementDisplay()
 
 } )

@@ -19,6 +19,7 @@ function updatePasswor(){
             $sql = "UPDATE `faculty` SET`FacultyPassword`='$hashed' WHERE `FacultyEmail`= '$email' AND `FacultyDeleted` = 1 ";
             $result = DB::DBconnection()->query($sql);
             if($result){
+                DB::DBclose();
                 return json_encode(array("status"=>true , "error"=>"", "message"=>"../../logout.php"));
             }
         }

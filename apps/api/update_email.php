@@ -17,6 +17,7 @@ function updateEmail(){
         $update = "UPDATE `faculty` SET `FacultyEmail`='$newEmail' WHERE `FacultyEmail`='$email' ";
         $result = DB::DBconnection()->query($update);
         if($result){
+            DB::DBclose();
             return json_encode(array("status"=>true, "message"=>"../../logout.php"));
         }
     }

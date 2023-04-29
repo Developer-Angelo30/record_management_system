@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/demo.css">
     <title>Document</title>
 </head>
 <body>
@@ -16,6 +16,11 @@
             </div>
             <form id="registerForm" >
                 <h5 class="text-uppercase text-left" >Create Account</h5> <hr>
+                <div class="input-group mt-3">
+                    <input type="text" name="username" class="form-control" placeholder="username">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <small class="text-danger error-message error-username" ></small>
                 <div class="input-group mt-3">
                     <input type="text" name="email" class="form-control" placeholder="Email Address">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
@@ -59,6 +64,11 @@
                     <span class="input-group-text"><i class="fa fa-building"></i></span>
                 </div>
                 <small class="text-danger error-message error-religion" ></small>
+                <div class="form-group mt-3">
+                    <select class="form-select" name="position" >
+                        <option selected value="Instructor" selected >Instructor</option>
+                      </select>
+                </div>
                 <div class="input-group mt-3">
                     <input type="text" class="form-control" name="contact-number" placeholder="Contact Number">
                     <span class="input-group-text"><i class="fa fa-phone"></i></span>
@@ -87,6 +97,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/a37dfd209c.js" crossorigin="anonymous"></script>
-<script src="./assets/js/demo.js"></script>
+<script src="./assets/js/customs.js"></script>
 </body>
 </html>

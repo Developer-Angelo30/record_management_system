@@ -15,6 +15,7 @@ $(document).ready( ()=>{
                 dataType: "JSON",
                 success: function (response) {
                    if(response.status == true){
+                        $('#registerForm')[0].reset()
                         Swal.fire(
                             'Successfuly Registerd!',
                             response.message,
@@ -214,6 +215,50 @@ $(document).ready( ()=>{
         })
     }
     updatePersonalInfo()
+
+    const deleteAccount = () =>{
+        $(document).on('submit' , '#deleteAccountForm' , function(e){
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    $.ajax({
+                        method: "POST",
+                        url: "../../apps/api/delete_account.php",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        dataType: "JSON",
+                        success: function (response) {
+                            if(response.status == true){
+                                location.href = response.message;
+                            }
+                            else{
+                                Swal.fire(
+                                    'Something went wrong!',
+                                    response.message,
+                                    'error'
+                                )
+                            }
+                        }
+                    });
+                    
+                }
+            })
+        })
+    }
+    deleteAccount()
 
     const announcementDisplay = () =>{
         

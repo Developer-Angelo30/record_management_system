@@ -134,36 +134,8 @@ $orange: #FB661E;
 
 #c1-template{
 
-    display: grid;
-    grid-template-columns: 300px 1fr;
-
-    .printable-holder{
-        // border: 1px solid black;
-        // background-color: red;
-        #printable{
-            border: none;
-            width: 100%;
-    
-            .content-print{
-    
-                table{
-                    border-collapse: collapse;
-                    width: 100%;
-                    p,small,span,strong,b{
-                        font-size: 9px;
-                        color: black;
-                    }
-
-                    tr{
-                        border: 1px solid black;
-                    }
-
-    
-                }
-    
-            }
-        }
-
-    }
+    background-color: red;
+    height: 100%;
+    width: 100%;
 
 }

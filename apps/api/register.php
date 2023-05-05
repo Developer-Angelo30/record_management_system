@@ -2,6 +2,7 @@
 require_once("../database/connection.php");
 require_once("../validation/validation.php");
 require_once("../encrypt/encrypt.php");
+require_once("../log.php");
 
 function createAccount(){
     $username = mysqli_real_escape_string(DB::DBconnection(), $_POST['username']);
@@ -69,65 +70,68 @@ function createAccount(){
                                                                     )";
                                                             $result = DB::DBconnection()->query($sql);
                                                             if($result){
-                                                                DB::DBclose();
-                                                                return json_encode(array("status"=>true , "error"=>"" , "message"=> "Successfully Registered!"));
+                                                                log::logs("creating account.");
+                                                                $output =  json_encode(array("status"=>true , "error"=>"" , "message"=> "Successfully Registered!"));
                                                             }
                                                         }
                                                         else{
-                                                            return json_encode(array("status"=>false , "error"=>"" , "message"=> "Email Address is already registered."));
+                                                            log::logs("failed creating account. email already exist");
+                                                            $output =  json_encode(array("status"=>false , "error"=>"" , "message"=> "Email Address is already registered."));
                                                         }
                                                     }
                                                     else{
-                                                        return json_encode(array("status"=>false , "error"=>"password" , "message"=> "Password must be atleast 8 characters."));
+                                                        $output =  json_encode(array("status"=>false , "error"=>"password" , "message"=> "Password must be atleast 8 characters."));
                                                     }
                                                 }
                                                 else{
-                                                    return json_encode(array("status"=>false , "error"=>"contact-number" , "message"=> "Please input a valid contact number."));
+                                                    $output =  json_encode(array("status"=>false , "error"=>"contact-number" , "message"=> "Please input a valid contact number."));
                                                 }
                                             }
                                             else{
-                                                return json_encode(array("status"=>false , "error"=>"email" , "message"=> "Please input a valid email address."));
+                                                $output =  json_encode(array("status"=>false , "error"=>"email" , "message"=> "Please input a valid email address."));
                                             }
                                         }
                                         else{
-                                            return json_encode(array("status"=>false , "error"=>"password" , "message"=> "Please input password."));
+                                            $output =  json_encode(array("status"=>false , "error"=>"password" , "message"=> "Please input password."));
                                         }
                                     }
                                     else{
-                                        return json_encode(array("status"=>false , "error"=>"contact-number" , "message"=> "Please input contact number."));
+                                        $output =  json_encode(array("status"=>false , "error"=>"contact-number" , "message"=> "Please input contact number."));
                                     }
                                 }
                                 else{
-                                    return json_encode(array("status"=>false , "error"=>"occupation" , "message"=> "Please input religion."));
+                                    $output =  json_encode(array("status"=>false , "error"=>"occupation" , "message"=> "Please input religion."));
                                 }
                             }
                             else{
-                                return json_encode(array("status"=>false , "error"=>"occupation" , "message"=> "Please input Occupation."));
+                                $output =  json_encode(array("status"=>false , "error"=>"occupation" , "message"=> "Please input Occupation."));
                             }
                         }
                         else{
-                            return json_encode(array("status"=>false , "error"=>"" , "message"=> "Do not modify inspect element"));
+                            $output =  json_encode(array("status"=>false , "error"=>"" , "message"=> "Do not modify inspect element"));
                         }
                     }
                     else{
-                        return json_encode(array("status"=>false , "error"=>"" , "message"=> "Do not modify inspect element"));
+                        $output =  json_encode(array("status"=>false , "error"=>"" , "message"=> "Do not modify inspect element"));
                     }
                 }
                 else{
-                    return json_encode(array("status"=>false , "error"=>"fullname" , "message"=> "Please input Fullname"));
+                    $output =  json_encode(array("status"=>false , "error"=>"fullname" , "message"=> "Please input Fullname"));
                 }
             }
             else{
-                return json_encode(array("status"=>false , "error"=>"email" , "message"=> "Please input email Address"));
+                $output =  json_encode(array("status"=>false , "error"=>"email" , "message"=> "Please input email Address"));
             }
         }
         else{
-            return json_encode(array("status"=>false , "error"=>"username" , "message"=> "Please Input Username."));
+            $output =  json_encode(array("status"=>false , "error"=>"username" , "message"=> "Please Input Username."));
         }
     }
     else{
-        return json_encode(array("status"=>false , "error"=>"confirm-password" , "message"=> "Password is not matched."));
+        $output =  json_encode(array("status"=>false , "error"=>"confirm-password" , "message"=> "Password is not matched."));
     }
+    DB::DBclose();
+    return $output;
 }
 echo createAccount();
 

@@ -101,21 +101,7 @@
   text-shadow: 0 5px 10px black;
 }
 #c1-template {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-}
-#c1-template .printable-holder #printable {
-  border: none;
+  background-color: red;
+  height: 100%;
   width: 100%;
-}
-#c1-template .printable-holder #printable .content-print table {
-  border-collapse: collapse;
-  width: 100%;
-}
-#c1-template .printable-holder #printable .content-print table p, #c1-template .printable-holder #printable .content-print table small, #c1-template .printable-holder #printable .content-print table span, #c1-template .printable-holder #printable .content-print table strong, #c1-template .printable-holder #printable .content-print table b {
-  font-size: 9px;
-  color: black;
-}
-#c1-template .printable-holder #printable .content-print table tr {
-  border: 1px solid black;
-}/*# sourceMappingURL=demo.css.map */
+}/*# sourceMappingURL=all.css.map */

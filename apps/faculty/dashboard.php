@@ -44,7 +44,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <link rel="stylesheet" href="../../assets/css/all.css">
     <title>Document</title>
 </head>
 <body>
@@ -211,7 +211,36 @@ else{
                             </form>
                         </div>
                     </div>
+                    <div>
+                        <h4 class="text-uppercase" >Personal Information</h4><hr>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccount">
+                            Delete Account
+                        </button>
+                    </div>
                 </div>
+                <!-- MODAL DELETE ACCOUNT -->
+                <div class="modal fade" id="deleteAccount" tabindex="-1" aria-labelledby="deleteAccountLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteAccountLabel">Delete Account.</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form id="deleteAccountForm">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MODAL DELETE ACCOUNT -->
             </section>
         </div>
     </section>

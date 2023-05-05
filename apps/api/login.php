@@ -3,6 +3,7 @@ session_start();
 require_once("../database/connection.php");
 require_once("../validation/validation.php");
 require_once("../encrypt/encrypt.php");
+require_once("../log.php");
 
 function loginAccount(){
     
@@ -23,29 +24,31 @@ function loginAccount(){
     
                         $_SESSION['email'] = $row['FacultyEmail'];
                         $_SESSION['password'] = $row['FacultyPassword'];
-
-                        DB::DBclose();
-                        return ($row['FacultyRole'] == 1) ? json_encode(array("status"=>true, "message"=>"./apps/admin/dashboard.php")):json_encode(array("status"=>true, "message"=>"./apps/faculty/dashboard.php"));
+                        log::logs("login account.");
+                        $output = ($row['FacultyRole'] == 1) ? json_encode(array("status"=>true, "message"=>"./apps/admin/dashboard.php")):json_encode(array("status"=>true, "message"=>"./apps/faculty/dashboard.php"));
                     }
                     else{
-                        return json_encode(array("status"=>false, "error"=>"" , "message"=>"Wrong credential!"));
+                        log::logs("trying to login.");
+                        $output = json_encode(array("status"=>false, "error"=>"" , "message"=>"Wrong credential!"));
                     }
                 }
                 else{
-                    return json_encode(array("status"=>false, "error"=>"email" , "message"=>"Please input valid email address"));
+                    $output = json_encode(array("status"=>false, "error"=>"email" , "message"=>"Please input valid email address"));
                 }
             }
             else{
-                return json_encode(array("status"=>false, "error"=>"password" , "message"=>"Please input password"));
+                $output = json_encode(array("status"=>false, "error"=>"password" , "message"=>"Please input password"));
             }
         }
         else{
-            return json_encode(array("status"=>false, "error"=>"email" , "message"=>"Please input email address"));
+            $output = json_encode(array("status"=>false, "error"=>"email" , "message"=>"Please input email address"));
         }
     }
     else{
-        return json_encode(array("status"=>false, "error"=>"username" , "message"=>"Please input username"));
+        $output =  json_encode(array("status"=>false, "error"=>"username" , "message"=>"Please input username"));
     }
+    DB::DBclose();
+    return $output;
 }
 echo loginAccount();
 

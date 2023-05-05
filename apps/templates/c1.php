@@ -44,128 +44,96 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <link rel="stylesheet" href="../../assets/css/all.css">
     <link rel="stylesheet" href="../../assets/css/printable-design.css"  media="print" >
     <title>Document</title>
 </head>
 <body>
     <section id="c1-template" >
-    <div class="data">
-         <h1>NOT BERLONG</h1>
-    </div>
     <div class="printable-holder">
         <div class="printable" id="printable" >
-            <div class="content-print">
-                <table>
-                        <tr class="" >
-                            <td colspan="9" ><small class="d-flex" >Print legibly. Tick appropriate boxes([]) and use separate sheet if necessary. Indicate N/A if not applicable. <strong>DO NOT ABBREVIATE</strong> </small></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><span><small>1. CS ID No.</small></span></td>
-                            <td colspan="3" class="text-end" ><small>(Do not fill up. For CSC use only)</small></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="" >
-                            <td colspan="13" ><small >I. PERSONAL INFORMATION</small></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="" >
-                            <td width="15px" ><small>2</small></td>
-                            <td colspan="2" ><small >SURNAME</small></td>
-                            <td></td>
-                            <td colspan="11"  ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="" >
-                            <td width="15px" ><small></small></td>
-                            <td colspan="2" ><small >FIRSTNAME</small></td>
-                            <td></td>
-                            <td colspan="11" ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td colspan="3"  class="bg-secondary" style="border:1px solid black;" ></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="" >
-                            <td width="15px" ><small></small></td>
-                            <td colspan="2" ><small >LASTNAME</small></td>
-                            <td></td>
-                            <td colspan="11" ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td width="15px" ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="" ><small >3 DATE OF BIRTH <br>((mm/dd/yyyy))</small></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td colspan="3" rowspan="3" class="bg-secondary" ><small>16. CITIZENSHIP <br></small></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                </table>
-
-                
-            </div>
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="14" ><strong>I. PERSONAL INFORMATION</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" >SURSNAME</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" >FIRSTNAME</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" >LASTNAME</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </div>
 

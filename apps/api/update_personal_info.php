@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../database/connection.php");
+require_once("../log.php");
     
     function updatePersonal(){
 
@@ -43,7 +44,7 @@ require_once("../database/connection.php");
                 
                 }
                 else{
-                    return json_encode(array("status"=>false, "message"=>"Please upload PNG <JPEG , JPG File image extension."));
+                    $output =  json_encode(array("status"=>false, "message"=>"Please upload PNG <JPEG , JPG File image extension."));
                 }
             }
             else{
@@ -62,13 +63,18 @@ require_once("../database/connection.php");
             $result = DB::DBconnection()->query($sql);
             if($result){
                 move_uploaded_file($profileTmp, "$profileNewName");
+                log::logs("Successfully updated personal information.");
                 DB::DBclose();
-                return json_encode(array("status"=>true));
+                $output = json_encode(array("status"=>true));
             }
         }
         else{
-            return json_encode(array("status"=>false, "message"=>"Please Input all required inputs"));
+            log::logs("Failed to updated personal information.");
+            $output = json_encode(array("status"=>false, "message"=>"Please Input all required inputs"));
         }
+
+        DB::DBclose();
+        return $output;
 
         
     }

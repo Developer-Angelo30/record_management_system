@@ -3,6 +3,7 @@ session_start();
 require_once("../database/connection.php");
 require_once("../validation/validation.php");
 require_once("../encrypt/encrypt.php");
+require_once("../log.php");
 
 function updatePasswor(){
 
@@ -19,17 +20,21 @@ function updatePasswor(){
             $sql = "UPDATE `faculty` SET`FacultyPassword`='$hashed' WHERE `FacultyEmail`= '$email' AND `FacultyDeleted` = 1 ";
             $result = DB::DBconnection()->query($sql);
             if($result){
-                DB::DBclose();
-                return json_encode(array("status"=>true , "error"=>"", "message"=>"../../logout.php"));
+                log::logs("Successfully update password.");
+                $output = json_encode(array("status"=>true , "error"=>"", "message"=>"../../logout.php"));
             }
         }
         else{
-            return json_encode(array("status"=>false , "error"=>"", "message"=>"New Password not matched!"));
+            log::logs("Failed to updated password.");
+            $output = json_encode(array("status"=>false , "error"=>"", "message"=>"New Password not matched!"));
         }
     }
     else{
-        return json_encode(array("status"=>false , "error"=>"", "message"=>"Input fields are empty!"));
+        $output = json_encode(array("status"=>false , "error"=>"", "message"=>"Input fields are empty!"));
     }
+
+    DB::DBclose();
+    return $output;
 
 }
 echo updatePasswor();

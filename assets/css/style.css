@@ -100,8 +100,21 @@
   text-align: center;
   text-shadow: 0 5px 10px black;
 }
+
 #c1-template {
   background-color: red;
   height: 100%;
   width: 100%;
-}/*# sourceMappingURL=all.css.map */
+}
+#c1-template .printable-holder #printable table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#c1-template .printable-holder #printable table tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#c1-template .printable-holder #printable table tr td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}/*# sourceMappingURL=style.css.map */

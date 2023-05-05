@@ -44,7 +44,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/all.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -212,7 +212,7 @@ else{
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-uppercase" >Personal Information</h4><hr>
+                        <h4 class="text-uppercase" >Delete Account</h4><hr>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccount">
                             Delete Account
                         </button>
@@ -229,7 +229,7 @@ else{
                         <form id="deleteAccountForm">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <input type="password" name="password" id="" class="form-control">
+                                    <input type="password" placeholder="Password" name="password" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="modal-footer">

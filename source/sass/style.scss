@@ -122,12 +122,6 @@ $orange: #FB661E;
                 }
             }
         }
-
-        #setting{
-            #profile-trigger{
-
-            }
-        }
     }
 
 }
@@ -137,5 +131,26 @@ $orange: #FB661E;
     background-color: red;
     height: 100%;
     width: 100%;
+
+    .printable-holder{
+        
+        #printable{
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                
+                tr{
+                    border: 1px solid black;
+                    border-collapse: collapse;
+
+                    td{
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                    }
+                }
+            }
+            
+        }
+    }
 
 }

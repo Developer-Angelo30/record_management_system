@@ -25,7 +25,7 @@ if($result_check->num_rows > 0){
     }
 }
 else{
-    log::logs("something error in deletingaccount ");
+    log::logs("something error in deleting account ");
     echo json_encode(array("status"=>false , "message"=>"Incorrect Password"));
 }
 

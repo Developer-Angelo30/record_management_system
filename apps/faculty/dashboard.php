@@ -78,7 +78,10 @@ else{
             </section>
             <section class="content-section" id="template" >
                 <div class="text-end">
-                    <button class="btn btn-success w-25 "><i class="fa fa-plus" > New Template</i></button>
+                    <a href="../templates/c1.php" class="btn btn-primary m-2" >C1</a>
+                    <a href="../templates/c1.php" class="btn btn-primary m-2" >C2</a>
+                    <a href="../templates/c1.php" class="btn btn-primary m-2" >C3</a>
+                    <a href="../templates/c1.php" class="btn btn-primary m-2" >C4</a>
                 </div>
                 <hr>
                 <div class="navbar">
